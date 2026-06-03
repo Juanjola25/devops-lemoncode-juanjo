@@ -1,0 +1,18 @@
+--Crear la red docker
+docker network create lemoncode-network
+
+(Para comprobar que existe "docker network ls")
+
+--Crear contenedor de base de datos mongo con persistencia de datos.
+
+docker run -d \
+	--name mongo \
+	--network lemoncode-network \
+	-p 27017:27017 \
+	-v mongo-data:/data/db \
+	mongo:4.4 
+(He puesto la version 4.4 de mongo por problemas de compatibilidad con mi procesador)
+
+docker ps para comprobar que el contenedor esta corriendo
+
+
