@@ -1,0 +1,115 @@
+root@DESKTOP-U1MU8N8:/mnt/c/Windows/System32/DEVOPS_BOOTCAMP/proyecto_docker# docker compose up --build
+WARN[0000] /mnt/c/Windows/System32/DEVOPS_BOOTCAMP/proyecto_docker/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+[+] Building 2.0s (20/20) FINISHED
+ => [internal] load local bake definitions                                                                                                                                                                                              0.0s
+ => => reading from stdin 1.13kB                                                                                                                                                                                                        0.0s
+ => [frontend internal] load build definition from Dockerfile                                                                                                                                                                           0.0s
+ => => transferring dockerfile: 148B                                                                                                                                                                                                    0.0s
+ => [topics-api internal] load build definition from Dockerfile                                                                                                                                                                         0.0s
+ => => transferring dockerfile: 148B                                                                                                                                                                                                    0.0s
+ => [frontend internal] load metadata for docker.io/library/node:18                                                                                                                                                                     1.5s
+ => [frontend internal] load .dockerignore                                                                                                                                                                                              0.0s
+ => => transferring context: 2B                                                                                                                                                                                                         0.0s
+ => [topics-api internal] load .dockerignore                                                                                                                                                                                            0.0s
+ => => transferring context: 2B                                                                                                                                                                                                         0.0s
+ => [topics-api 1/5] FROM docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783                                                                                                             0.0s
+ => => resolve docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783                                                                                                                        0.0s
+ => [frontend internal] load build context                                                                                                                                                                                              0.0s
+ => => transferring context: 250B                                                                                                                                                                                                       0.0s
+ => [topics-api internal] load build context                                                                                                                                                                                            0.0s
+ => => transferring context: 428B                                                                                                                                                                                                       0.0s
+ => CACHED [topics-api 2/5] WORKDIR /app                                                                                                                                                                                                0.0s
+ => CACHED [frontend 3/5] COPY package*.json ./                                                                                                                                                                                         0.0s
+ => CACHED [frontend 4/5] RUN npm install                                                                                                                                                                                               0.0s
+ => CACHED [frontend 5/5] COPY . .                                                                                                                                                                                                      0.0s
+ => [frontend] exporting to image                                                                                                                                                                                                       0.1s
+ => => exporting layers                                                                                                                                                                                                                 0.0s
+ => => exporting manifest sha256:6d28ad1c589e8dc68be6ff43e73372bc1a87aed20e22cff2e54ddc3c51b042ae                                                                                                                                       0.0s
+ => => exporting config sha256:4b0c7e5825c363f3b73fc5f693e726c6c49a38ff10fce331dc375709e90bb1bf                                                                                                                                         0.0s
+ => => exporting attestation manifest sha256:6c8879a29ed4d2e8eebda0030ae2d3f1e348303f3273ca257ab0d81ee11a7996                                                                                                                           0.0s
+ => => exporting manifest list sha256:0b9ef9672a825d37a282877ba06a89c1cddd2c9c7c083531c8abb820e664391c                                                                                                                                  0.0s
+ => => naming to docker.io/library/proyecto_docker-frontend:latest                                                                                                                                                                      0.0s
+ => => unpacking to docker.io/library/proyecto_docker-frontend:latest                                                                                                                                                                   0.0s
+ => CACHED [topics-api 3/5] COPY package*.json ./                                                                                                                                                                                       0.0s
+ => CACHED [topics-api 4/5] RUN npm install                                                                                                                                                                                             0.0s
+ => CACHED [topics-api 5/5] COPY . .                                                                                                                                                                                                    0.0s
+ => [topics-api] exporting to image                                                                                                                                                                                                     0.1s
+ => => exporting layers                                                                                                                                                                                                                 0.0s
+ => => exporting manifest sha256:ec9263b1d593d8cbbf7cbe8e3d0009b94e440aae638bd9dbe36ed50a1883e582                                                                                                                                       0.0s
+ => => exporting config sha256:433ad0eed20a3d93b8e819de8093422e7423cfb0c0f0f5939c57843f27c432b8                                                                                                                                         0.0s
+ => => exporting attestation manifest sha256:bcbdd92f3dab43ed2a54fb5e981275006a373a031a0c7641c1857583f508278c                                                                                                                           0.0s
+ => => exporting manifest list sha256:c9df5760a53d383d38827d822df4ce99720c61129499accdfdf2314f833e3dbf                                                                                                                                  0.0s
+ => => naming to docker.io/library/proyecto_docker-topics-api:latest                                                                                                                                                                    0.0s
+ => => unpacking to docker.io/library/proyecto_docker-topics-api:latest                                                                                                                                                                 0.0s
+ => [frontend] resolving provenance for metadata file                                                                                                                                                                                   0.0s
+ => [topics-api] resolving provenance for metadata file                                                                                                                                                                                 0.0s
+[+] up 5/5
+ ✔ Image proyecto_docker-topics-api Built                                                                                                                                                                                                2.0s
+ ✔ Image proyecto_docker-frontend   Built                                                                                                                                                                                                2.0s
+ ✔ Container mongo                  Created                                                                                                                                                                                              0.1s
+ ✔ Container topics-api             Created                                                                                                                                                                                              0.0s
+ ✔ Container frontend               Created                                                                                                                                                                                              0.0s
+Attaching to frontend, mongo, topics-api
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.792+00:00"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"main","msg":"Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.796+00:00"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"main","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set tcpFastOpenServer, tcpFastOpenClient, and tcpFastOpenQueueSize."}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.797+00:00"},"s":"I",  "c":"STORAGE",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":1,"port":27017,"dbPath":"/data/db","architecture":"64-bit","host":"e968c0a2f943"}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.797+00:00"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"4.4.30","gitVersion":"4d7fa6a6260d25c5caa971dce10561690cb79dea","openSSLVersion":"OpenSSL 1.1.1f  31 Mar 2020","modules":[],"allocator":"tcmalloc","environment":{"distmod":"ubuntu2004","distarch":"x86_64","target_arch":"x86_64"}}}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.797+00:00"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"Ubuntu","version":"20.04"}}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.797+00:00"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{"net":{"bindIp":"*"}}}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.799+00:00"},"s":"I",  "c":"STORAGE",  "id":22297,   "ctx":"initandlisten","msg":"Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem","tags":["startupWarnings"]}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.799+00:00"},"s":"I",  "c":"STORAGE",  "id":22315,   "ctx":"initandlisten","msg":"Opening WiredTiger","attr":{"config":"create,cache_size=3382M,session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000,close_scan_interval=10,close_handle_minimum=250),statistics_log=(wait=0),verbose=[recovery_progress,checkpoint_progress,compact_progress],"}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.946+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1780918530:946515][1:0x7355a3c76cc0], txn-recover: [WT_VERB_RECOVERY | WT_VERB_RECOVERY_PROGRESS] Set global recovery timestamp: (0, 0)"}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.946+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":"[1780918530:946585][1:0x7355a3c76cc0], txn-recover: [WT_VERB_RECOVERY | WT_VERB_RECOVERY_PROGRESS] Set global oldest timestamp: (0, 0)"}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.964+00:00"},"s":"I",  "c":"STORAGE",  "id":4795906, "ctx":"initandlisten","msg":"WiredTiger opened","attr":{"durationMillis":165}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.964+00:00"},"s":"I",  "c":"RECOVERY", "id":23987,   "ctx":"initandlisten","msg":"WiredTiger recoveryTimestamp","attr":{"recoveryTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:30.994+00:00"},"s":"I",  "c":"STORAGE",  "id":22262,   "ctx":"initandlisten","msg":"Timestamp monitor starting"}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.002+00:00"},"s":"W",  "c":"CONTROL",  "id":22120,   "ctx":"initandlisten","msg":"Access control is not enabled for the database. Read and write access to data and configuration is unrestricted","tags":["startupWarnings"]}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.005+00:00"},"s":"W",  "c":"CONTROL",  "id":22184,   "ctx":"initandlisten","msg":"Soft rlimits too low","attr":{"currentValue":1024,"recommendedMinimum":64000},"tags":["startupWarnings"]}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.007+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"initandlisten","msg":"createCollection","attr":{"namespace":"admin.system.version","uuidDisposition":"provided","uuid":{"uuid":{"$uuid":"1b2c50d8-e35f-4bd9-b05c-abcdd5af3481"}},"options":{"uuid":{"$uuid":"1b2c50d8-e35f-4bd9-b05c-abcdd5af3481"}}}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.020+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"initandlisten","msg":"Index build: done building","attr":{"buildUUID":null,"namespace":"admin.system.version","index":"_id_","commitTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.020+00:00"},"s":"I",  "c":"COMMAND",  "id":20459,   "ctx":"initandlisten","msg":"Setting featureCompatibilityVersion","attr":{"newVersion":"4.4"}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.021+00:00"},"s":"I",  "c":"STORAGE",  "id":20536,   "ctx":"initandlisten","msg":"Flow Control is enabled on this deployment"}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.024+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"initandlisten","msg":"createCollection","attr":{"namespace":"local.startup_log","uuidDisposition":"generated","uuid":{"uuid":{"$uuid":"10611c1b-540e-405e-b749-013981fea09e"}},"options":{"capped":true,"size":10485760}}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.038+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"initandlisten","msg":"Index build: done building","attr":{"buildUUID":null,"namespace":"local.startup_log","index":"_id_","commitTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.039+00:00"},"s":"I",  "c":"FTDC",     "id":20625,   "ctx":"initandlisten","msg":"Initializing full-time diagnostic data capture","attr":{"dataDirectory":"/data/db/diagnostic.data"}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.040+00:00"},"s":"I",  "c":"REPL",     "id":6015317, "ctx":"initandlisten","msg":"Setting new configuration state","attr":{"newState":"ConfigReplicationDisabled","oldState":"ConfigPreStart"}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.043+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"/tmp/mongodb-27017.sock"}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.043+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"0.0.0.0"}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.043+00:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.055+00:00"},"s":"I",  "c":"CONTROL",  "id":20712,   "ctx":"LogicalSessionCacheReap","msg":"Sessions collection is not set up; waiting until next sessions reap interval","attr":{"error":"NamespaceNotFound: config.system.sessions does not exist"}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.055+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"LogicalSessionCacheRefresh","msg":"createCollection","attr":{"namespace":"config.system.sessions","uuidDisposition":"generated","uuid":{"uuid":{"$uuid":"591eae94-2731-4b0d-a74c-03aaef70051a"}},"options":{}}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.081+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"LogicalSessionCacheRefresh","msg":"Index build: done building","attr":{"buildUUID":null,"namespace":"config.system.sessions","index":"_id_","commitTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+mongo  | {"t":{"$date":"2026-06-08T11:35:31.081+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"LogicalSessionCacheRefresh","msg":"Index build: done building","attr":{"buildUUID":null,"namespace":"config.system.sessions","index":"lsidTTLIndex","commitTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+topics-api  |
+topics-api  | > lemoncode-backend@1.0.0 start
+topics-api  | > node app.js
+topics-api  |
+frontend    |
+frontend    | > lemoncode-frontend@1.0.0 start
+frontend    | > node server.js
+frontend    |
+frontend    | [dotenv@17.2.3] injecting env (0) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+frontend    |
+frontend    | ======================================================================
+frontend    | 🍋 LEMONCODE CALENDAR - FRONTEND SERVER
+frontend    | ======================================================================
+frontend    | 🚀 Servidor iniciado correctamente
+frontend    | 📱 Web: http://localhost:3000
+frontend    | 🔗 API: http://topics-api:5000/api/classes
+frontend    | ⏰ Hora: 8/6/2026, 11:35:31
+frontend    | ======================================================================
+frontend    |
+topics-api  |
+topics-api  | ══════════════════════════════════════════════════════════════════════
+topics-api  | 🍋 LEMONCODE CALENDAR - BACKEND (Node.js + Express)
+topics-api  | ══════════════════════════════════════════════════════════════════════
+topics-api  | 🔄 Conectando a MongoDB...
+mongo       | {"t":{"$date":"2026-06-08T11:35:31.777+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.19.0.3:60986","connectionId":1,"connectionCount":1}}
+mongo       | {"t":{"$date":"2026-06-08T11:35:31.781+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn1","msg":"client metadata","attr":{"remote":"172.19.0.3:60986","client":"conn1","doc":{"driver":{"name":"nodejs","version":"6.21.0"},"platform":"Node.js v18.20.8, LE","os":{"name":"linux","architecture":"x64","version":"6.6.114.1-microsoft-standard-WSL2","type":"Linux"},"env":{"container":{"runtime":"docker"}}}}}
+topics-api  | ✅ Conexión a MongoDB exitosa
+topics-api  | 📚 Colección Classes cargada
+topics-api  | 🚀 Servidor ejecutándose en: http://localhost:5000
+topics-api  | 📚 API: http://localhost:5000/api/classes
+topics-api  | ⏰ Hora: 8/6/2026, 11:35:31
+topics-api  | ══════════════════════════════════════════════════════════════════════
+topics-api  |

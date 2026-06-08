@@ -1,0 +1,7 @@
+docker network create lemoncode-network
+
+docker run -d \
+  --name mongo \
+  --network lemoncode-network \
+  -p 27017:27017 \
+  mongo:4.4
